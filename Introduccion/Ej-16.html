@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h2>Ejercicio 16</h2>
+
+<script>
+    let numero=parseInt(window.prompt('Introduce un numero de tres cifras:'))
+    //536
+    let num1 = parseInt(numero/100) // numero/100 = 5.36; con parseInt nos da la parte entera, es decir 5
+    let num2 = parseInt((numero%100)/10) //numero%100 = me da el resto que es 36, si lo / 10 , da 3.6 parseInt es 3
+    let num3 = parseInt(numero%10) // nos da el resto de dividir 536/10 = que es 6
+
+    console.log(num1+num2+num3)
+       
+</script> 
+
+    
+</body>
+</html>
