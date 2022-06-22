@@ -163,30 +163,30 @@ let personas = {
 };
 
 
-let dato = window.prompt('Introduce el nombre de la persona para acceder a sus datos')
-if( dato = personas.BridgetteMcGuire){
-  document.body.appendChild(newDiv).style.background = personas.BridgetteMcGuire.eyeColor
-}else if (dato = personas.melindawheeler){
-  document.body.appendChild(newDiv).style.background = personas.melindawheeler.eyeColor
-}else if (dato = personas.WardFulton){
-  document.body.appendChild(newDiv).style.background = perosnas.WardFulton.eyeColor
-}else if (dato = personas.TessaSellers){
-  document.body.appendChild(newDiv).style.background = personas.TessaSellers.eyeColor
-}else if (dato = personas.KimberleyRoberson){
-  document.body.appendChild(newDiv).style.background = personas.KimberleyRoberson.eyeColor
-}else if (dato = personas.EleanorStafford){
-  document.body.appendChild(newDiv).style.background = personas.EleanorStafford.eyeColor
-}else if (dato = personas.CraneHarris){
-  document.body.appendChild(newDiv).style.background = personas.CraneHarris.eyeColor
-}else {}
+let busqueda = window.prompt('Introduce un nombre:')
+let respuesta = document.createElement('div')
+respuesta.classList.add('container')
+let encontrado = false 
 
-let newDiv = document.createElement('div')
-newDiv.innerHTML = `
-<img id = "picture">'personas.BridgetteMcGuire.picture'</>
-<h1>'personas.BridgetteMcGuire.name'</h1>
-<p> 'personas.BridgetteMcGuire.age' </p>
-<p>'personas.BridgetteMcGuire.email'</p>
-<p>'personas.BridgetteMcGuire.address'</p>`
+for (const nombre in personas) {
+  if (personas[nombre].name === busqueda) {
+    encontrado = true
+    respuesta.innerHTML = `
+    <div class ="card">
+    <img src ="${personas[nombre].picture}" alt ="${personas[nombre].name}">
+    <h3>${personas[nombre].name}</h3>
+    <p>${personas[nombre].email}</p>
+    <p>${personas[nombre].address}</p>
+    </div>`
+    document.getElementsByClassName('card')
+    respuesta.style.backgroundColor = `${personas[nombre].eyeColor}`
+
+  }
+}
+
+if (!encontrado) {
+  respuesta.innerHTML = `<p>No hemos encontrado nada por ${busqueda}</p>`
+}
 
 
 
